@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Titillium+Web&display=swap");
+
+$Orange: hsl(25, 97%, 53%);
+$white: hsl(0, 0%, 100%);
+$light-grey: hsl(217, 12%, 63%);
+$medium-grey: hsl(216, 12%, 54%);
+$dark-blue: hsl(213, 19%, 18%);
+$very-dark-blue: hsl(216, 12%, 8%);
+
+@mixin FlexBoxHorizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin FlexBoxVertical {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+* {
+  font-family: "Overpass", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  overflow: hidden;
+}
+
+.App {
+  min-height: 100vh;
+  min-width: 100vh;
+  background-color: $very-dark-blue;
+
+  @include FlexBoxHorizontal;
+}
+
+.wrapper {
+  border-radius: 1.75rem;
+  max-height: 45vh;
+  max-width: 45vh;
+  background-color: $dark-blue;
+  //   z-index: 2;
+  padding: 2rem;
+}
+// .logoBox {
+//   background-color: #272f3c;
+// }
+.logo {
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #303949;
+}
+h1 {
+  //   line-height: 4rem;
+  color: $white;
+  padding-top: 1.5rem;
+  font-weight: 700;
+}
+p {
+  font-size: 15px;
+  color: $medium-grey;
+  padding-top: 1rem;
+  line-height: 1.4rem;
+}
+
+ul {
+  padding-top: 1rem;
+  //   padding-bottom: 1rem;
+  @include FlexBoxHorizontal();
+  justify-content: space-between;
+  color: $light-grey;
+  li {
+    text-align: center;
+    background-color: #303949;
+    padding: 1rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50px 50px 50px 50px;
+  }
+  li:hover {
+    background-color: $Orange;
+    cursor: pointer;
+    color: $white;
+  }
+}
+
+button {
+  margin-top: 1.4rem;
+  border-radius: 20px;
+  border: none;
+  background-color: $Orange;
+  color: $white;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  width: 100%;
+  height: 2.6rem;
+}
+button:hover {
+  background-color: $white;
+  color: $Orange;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: $light-grey;
+  color: $white;
+}
+
+@media only screen and (min-width: 360px) {
+  .App {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    min-width: 0;
+    padding: 0.5rem;
+    overflow: hidden;
+  }
+  .wrapper {
+    // height: 50vh;
+    max-height: 62vh;
+    max-width: 50vh;
+  }
+
+  .wrapper2 {
+    height: 48vh;
+  }
+}
+
+@media screen and (min-width: 758px) {
+  .wrapper {
+    max-width: 40vh;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .wrapper {
+    max-width: 46vh;
+  }
+}
